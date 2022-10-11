@@ -18,8 +18,8 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.carlos.xmlutils.entidades.Asignatura;
-import com.carlos.xmlutils.entidades.Noticia;
+import com.carlos.xmljson.entidades.Asignatura;
+import com.carlos.xmljson.entidades.Noticia;
 
 public class XmlUtils {
 	public static List<Asignatura> procesarXmlSax(String directorio, String nombreArchivo) {

@@ -1,4 +1,4 @@
-package com.carlos.xmlutils.entidades;
+package com.carlos.xmljson.entidades;
 
 public class Asignatura {
 
