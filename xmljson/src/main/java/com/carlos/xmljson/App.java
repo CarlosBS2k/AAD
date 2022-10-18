@@ -40,8 +40,8 @@ public class App
     	/*JsonUtils.devolverArrayGsonGenerico("https://jsonplaceholder.typicode.com/todos",Tarea[].class)
     					.stream().filter(e->e.isCompleted()==false).forEach(e->System.out.println(e));/**/
     	//System.out.println(JsonUtils.devolverObjetoGsonGenerico("https://swapi.dev/api/people/1?format=json",People.class));
-    	JsonUtils.devolverObjetoGsonGenerico("https://swapi.dev/api/people/1?format=json",People.class).getFilms()
-    					.stream().forEach(f->System.out.println(JsonUtils.devolverObjetoGsonGenerico(f+"?format=json", Film.class).getTitle()));
+    	/*JsonUtils.devolverObjetoGsonGenerico("https://swapi.dev/api/people/1?format=json",People.class).getFilms()
+    					.stream().forEach(f->System.out.println(JsonUtils.devolverObjetoGsonGenerico(f+"?format=json", Film.class).getTitle()));/**/
     	
     	/*
     	JsonUtils.devolverObjetoGsonGenerico("https://swapi.dev/api/people/1?format=json",People.class).getFilms() // Esto es marear por marear
@@ -49,5 +49,6 @@ public class App
 			String peli = new Gson().fromJson(InternetUtils.readUrl(f+"?format=json"), Object.class).toString();
 			System.out.println(peli.substring(peli.indexOf("title=")+6, peli.indexOf(',')));
 		});*/ 
+    	System.out.println(InternetUtils.readUrl("https://api.football-data.org/v4/teams/86/matches?status=SCHEDULED", "c4fd0d14fafd486798401ada7722441d"));
     }
 }

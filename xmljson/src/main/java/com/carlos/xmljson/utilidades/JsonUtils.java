@@ -19,6 +19,7 @@ import org.json.simple.parser.ParseException;
 import com.carlos.xmljson.entidades.FootballPlayer;
 import com.carlos.xmljson.entidades.Tarea;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -284,8 +285,24 @@ public class JsonUtils {
 	public static <T> List<T> devolverArrayGsonGenerico(String url,Class<T[]> clase) {
         return Arrays.asList(new Gson().fromJson(InternetUtils.readUrl(url),clase));
 	}
-	
+	/**
+	 * Metódo genérico que dada una url con un json donde se encuentra un objeto
+	 * y lo devuelve.
+	 * Ejemplo de llamada: JsonUtils.devolverGsonGenerico("https://jsonplaceholder.typicode.com/todos", Post.class)
+	 * @param <T> Nombre de la clase
+	 * @param url
+	 * @param clase Array de elementos del tipo de la clase
+	 * @return
+	 */
 	public static <T> T devolverObjetoGsonGenerico(String url,Class<T> clase) {
 		return new Gson().fromJson(InternetUtils.readUrl(url),clase);
+	}
+	
+	public static <T> String crearJson(T object) {
+		return new Gson().toJson(object);
+	}
+	
+	public static <T> String crearJsonPretty(T object) {
+		return new GsonBuilder().setPrettyPrinting().create().toJson(object);
 	}
 }
